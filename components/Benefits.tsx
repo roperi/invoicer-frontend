@@ -2,6 +2,14 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useEffect, useState } from 'react';
 
+interface Benefit {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+
 function Benefits() {
   const [benefits, setBenefits] = useState([]);
 
