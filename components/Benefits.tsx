@@ -11,13 +11,17 @@ interface Benefit {
 
 
 function Benefits() {
-  const [benefits, setBenefits] = useState([]);
+  const [benefits, setBenefits] = useState<Benefit[]>([]);
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits/`)
-      .then((response) => response.json())
-      .then((data) => setBenefits(data));
-  }, []);
+
+useEffect(() => {
+  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits/`)
+    .then((response) => response.json())
+    .then((data) => {
+      setBenefits(data);
+    })
+    .catch((error) => console.error('API Error:', error));
+}, []);
 
   return (
 
