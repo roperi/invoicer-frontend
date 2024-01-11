@@ -7,7 +7,7 @@ function Contact() {
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100">Contact Us</h2>
           <div className="flex flex-col items-center mt-8">
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Have any questions or concerns? We'd love to hear from you.
+              Have any questions or concerns? We&apos;d love to hear from you.
             </p>
             <div className="flex flex-col w-full max-w-md mt-8">
               <Input className="mb-4" placeholder="Name" />
