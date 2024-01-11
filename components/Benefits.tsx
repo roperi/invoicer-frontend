@@ -11,7 +11,7 @@ interface Benefit {
 
 
 function Benefits() {
-  const [benefits, setBenefits] = useState<Benefit[]>([]);
+  const [benefits, setBenefits] = useState<Array<Benefit>>([]);
 
 
 useEffect(() => {
