@@ -2,8 +2,16 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useEffect, useState } from 'react';
 
+
+interface Feature {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
+}
+
 function Features() {
-  const [features, setFeatures] = useState([]);
+  const [features, setFeatures] = useState<Array<Feature>>([]);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/features/`)

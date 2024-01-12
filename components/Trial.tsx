@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 function Trail() {
@@ -7,9 +8,11 @@ function Trail() {
       <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
         Join thousands of satisfied customers using our app globally.
       </p>
-      <Button className="mt-8" href="/signup">
-        Sign Up Now
-      </Button>
+        <Button className="mt-8">
+          <Link href="/signup">
+            <a>Sign Up Now</a>
+          </Link>
+        </Button>
     </section>
   );
 }

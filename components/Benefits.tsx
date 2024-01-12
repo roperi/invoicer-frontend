@@ -18,7 +18,7 @@ useEffect(() => {
   fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits/`)
     .then((response) => response.json())
     .then((data) => {
-      setBenefits(data);
+      setBenefits(data as Benefit[]);
     })
     .catch((error) => console.error('API Error:', error));
 }, []);

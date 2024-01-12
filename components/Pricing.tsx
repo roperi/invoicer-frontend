@@ -1,9 +1,17 @@
 "use client";
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 
+interface PricingPlan {
+  id: number;
+  title: string;
+  monthly_cost: number;
+  items: { id: number; name: string }[];
+}
+
 function Pricing() {
-  const [pricingPlans, setPricingPlans] = useState([]);
+  const [pricingPlans, setPricingPlans] = useState<Array<PricingPlan>>([]);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/pricing-plans/`)
@@ -24,9 +32,12 @@ function Pricing() {
                 <li key={item.id}>{item.name}</li>
               ))}
             </ul>
-              <Button className="mt-8" href="/signup">
-                Choose Plan
-              </Button>
+            <Button className="mt-8">
+              <Link href="/signup">
+                <a>Choose plan</a>
+              </Link>
+            </Button>
+
           </div>
         ))}
       </div>
